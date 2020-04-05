@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/black"
+    android:layoutDirection="ltr">
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/photo_view_pager" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/galleryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/boxR"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/boxG"
+            app:layout_constraintTop_toTopOf="parent" />
+        <SeekBar
+            android:id="@+id/boxRThreshold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            app:layout_constraintTop_toBottomOf="@id/boxR"
+            app:layout_constraintStart_toStartOf="@+id/boxR"
+            app:layout_constraintEnd_toEndOf="@id/boxR"
+            />
+        <TextView
+            android:id="@+id/boxRMeanLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="10.33"
+            android:textColor="@color/red"
+            app:layout_constraintStart_toStartOf="@+id/boxR"
+            app:layout_constraintTop_toBottomOf="@+id/boxRThreshold"/>
+        <TextView
+            android:id="@+id/boxRMeanMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="10.33"
+            android:textColor="@color/red"
+            app:layout_constraintStart_toStartOf="@+id/boxR"
+            app:layout_constraintTop_toBottomOf="@+id/boxRMeanLarge"/>
+        <TextView
+            android:id="@+id/boxRMeanSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="10.33"
+            android:textColor="@color/red"
+            app:layout_constraintStart_toStartOf="@+id/boxR"
+            app:layout_constraintTop_toBottomOf="@+id/boxRMeanMedium"/>
+
+        <ImageView
+            android:id="@+id/boxG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/boxR"
+            app:layout_constraintEnd_toStartOf="@+id/boxY"
+            app:layout_constraintTop_toTopOf="parent" />
+        <SeekBar
+            android:id="@+id/boxGThreshold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            app:layout_constraintTop_toBottomOf="@id/boxG"
+            app:layout_constraintStart_toStartOf="@+id/boxG"
+            app:layout_constraintEnd_toEndOf="@id/boxG"
+            />
+        <TextView
+            android:id="@+id/boxGMeanLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="10.33"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/boxG"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanLarge"/>
+        <TextView
+            android:id="@+id/boxGMeanMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="10.33"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/boxG"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanMedium"/>
+        <TextView
+            android:id="@+id/boxGMeanSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="10.33"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/boxG"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanSmall"/>
+        <ImageView
+            android:id="@+id/boxY"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/boxG"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <SeekBar
+            android:id="@+id/boxYThreshold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            app:layout_constraintTop_toBottomOf="@id/boxY"
+            app:layout_constraintStart_toStartOf="@+id/boxY"
+            app:layout_constraintEnd_toEndOf="@id/boxY"
+            />
+        <TextView
+            android:id="@+id/boxYMeanLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="10.33"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="@+id/boxY"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanLarge"/>
+        <TextView
+            android:id="@+id/boxYMeanMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="10.33"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="@+id/boxY"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanMedium"/>
+        <TextView
+            android:id="@+id/boxYMeanSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="10.33"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="@+id/boxY"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanSmall"/>
+
+        <TextView
+            android:id="@+id/boxCompareLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="YES"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanLarge"/>
+        <TextView
+            android:id="@+id/boxCompareMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="NO"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanMedium"/>
+        <TextView
+            android:id="@+id/boxCompareSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="YES"
+            android:textColor="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/boxRMeanSmall"/>
+
+
+        <TextView
+            android:id="@+id/imageName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"  />
+
+
+        <info.safronoff.camerax.utils.SelectAreaView
+            android:id="@+id/roi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <ImageButton
+            android:id="@+id/delete_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_delete" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
